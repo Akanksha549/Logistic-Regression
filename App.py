@@ -60,7 +60,7 @@ model.fit(X, y)
 # -----------------------------------
 st.subheader("Enter age")
 
-area = st.number_input(
+age = st.number_input(
     "Age",
     min_value=18,
     max_value=65,
