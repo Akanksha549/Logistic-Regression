@@ -41,7 +41,7 @@ st.write("Predict insurance purchase age using Logistic Regression")
 # -----------------------------------
 # Load Dataset
 # -----------------------------------
-df = pd.read_csv("insurance.csv")
+df = pd.read_csv("insurance_data.csv")
 
 st.subheader("Dataset")
 st.dataframe(df)
