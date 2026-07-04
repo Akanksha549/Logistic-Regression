@@ -75,6 +75,7 @@ if st.button("Predict Insurance Choice"):
     prediction = model.predict([[age]])
 
     if prediction[0] == 0:
-        st.error("❌No")
+        result="No"
     else:
-        st.success("✅Yes")
+        result="Yes"
+    st.success(f"Age Prediction: {result}")
