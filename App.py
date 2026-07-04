@@ -49,8 +49,8 @@ st.dataframe(df)
 # -----------------------------------
 # Train Model
 # -----------------------------------
-X = df.drop("price", axis=1)
-y = df["price"]
+X = df.drop("age", axis=1)
+y = df["age"]
 
 model = LogisticRegression()
 model.fit(X, y)
