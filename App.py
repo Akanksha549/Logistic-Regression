@@ -78,4 +78,4 @@ if st.button("Predict Insurance Choice"):
         result="No"
     else:
         result="Yes"
-    st.success(f"Insurance Purchase Prediction: {result}")st.success(f"Age Prediction: {result}")
+    st.success(f"Insurance Purchase Prediction: {result}")
