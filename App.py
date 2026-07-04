@@ -63,7 +63,7 @@ st.subheader("Enter age")
 age = st.number_input(
     "Age",
     min_value=10,
-    max_value=10000,
+    max_value=65,
     value=18,
     step=1
 )
@@ -74,8 +74,8 @@ age = st.number_input(
 if st.button("Predict Insurance Choice"):
     prediction = model.predict([[age]])
 
-    if prediction[0] == 0:
+    if prediction[0]==0:
         result="No"
     else:
         result="Yes"
-    st.success(f"Age Prediction: {result}")
+    st.success(f"Insurance Purchase Prediction: {result}")st.success(f"Age Prediction: {result}")
