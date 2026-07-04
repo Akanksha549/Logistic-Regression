@@ -63,7 +63,7 @@ st.subheader("Enter age")
 age = st.number_input(
     "Age",
     min_value=10,
-    max_value=65,
+    max_value=10000,
     value=18,
     step=1
 )
