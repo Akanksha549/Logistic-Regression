@@ -16,26 +16,32 @@ Original file is located at
     https://colab.research.google.com/drive/19X1VJGfFofHO5mMV-ohidfL3mrN_Jj8a
 """
 
-import streamlit as st
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
+import streamlit as st
+
+st.markdown("---")
+st.markdown(
+    "[GitHub](https://github.com/Akanksha549) | "
+    "[LinkedIn](https://www.linkedin.com/in/akanksha-mishra-7894912bb) | "
+)
+
 
 # -----------------------------------
 # Page Configuration
 # -----------------------------------
 st.set_page_config(
-    page_title="House Price Prediction",
-    page_icon="🏠",
+    page_title="Insurance Age Prediction",
     layout="centered"
 )
 
-st.title("🏠 House Price Prediction")
-st.write("Predict house price using Linear Regression")
+st.title(" Insurance Age Prediction")
+st.write("Predict insurance purchase age using Logistic Regression")
 
 # -----------------------------------
 # Load Dataset
 # -----------------------------------
-df = pd.read_csv("houseprice.csv")
+df = pd.read_csv("insurance.csv")
 
 st.subheader("Dataset")
 st.dataframe(df)
@@ -46,35 +52,29 @@ st.dataframe(df)
 X = df.drop("price", axis=1)
 y = df["price"]
 
-model = LinearRegression()
+model = LogisticRegression()
 model.fit(X, y)
 
 # -----------------------------------
 # User Input
 # -----------------------------------
-st.subheader("Enter House Area")
+st.subheader("Enter age")
 
 area = st.number_input(
-    "Area (Square Feet)",
-    min_value=100,
-    max_value=10000,
-    value=3300,
-    step=100
+    "Age",
+    min_value=18,
+    max_value=65,
+    value=25,
+    step=1
 )
 
 # -----------------------------------
 # Prediction
 # -----------------------------------
-if st.button("Predict Price"):
+if st.button("Predict Insurance Choice"):
+    if prediction(0)==0:
+        print('No')
+    else:
+        print('Yes')
 
-    prediction = model.predict([[area]])
-
-    st.success(f"Predicted Price: ₹ {prediction[0]:,.2f}")
-
-# -----------------------------------
-# Model Information
-# -----------------------------------
-st.subheader("Model Details")
-
-st.write("Coefficient:", model.coef_[0])
-st.write("Intercept:", model.intercept_)
+    prediction = model.predict([[age]])
