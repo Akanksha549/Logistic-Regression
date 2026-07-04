@@ -13,8 +13,14 @@ Above is a binary logistic regression problem as there are only two possible out
 
 # Commented out IPython magic to ensure Python compatibility.
 import pandas as pd
-from matplotlib import pyplot as plt
-# %matplotlib inline
+from sklearn.linear_model import LogisticRegression
+import streamlit as st
+
+st.markdown("---")
+st.markdown(
+    "[GitHub](https://github.com/Akanksha549) | "
+    "[LinkedIn](https://www.linkedin.com/in/akanksha-mishra-7894912bb) | "
+)
 
 df = pd.read_csv("insurance_data.csv")
 df.head()
