@@ -23,7 +23,7 @@ import streamlit as st
 st.markdown("---")
 st.markdown(
     "[GitHub](https://github.com/Akanksha549) | "
-    "[LinkedIn](https://www.linkedin.com/in/akanksha-mishra-7894912bb) | "
+    "[LinkedIn](https://www.linkedin.com/in/akanksha-mishra-7894912bb) "
 )
 
 
@@ -62,9 +62,9 @@ st.subheader("Enter age")
 
 age = st.number_input(
     "Age",
-    min_value=18,
+    min_value=10,
     max_value=65,
-    value=25,
+    value=18,
     step=1
 )
 
