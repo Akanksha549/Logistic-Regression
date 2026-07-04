@@ -72,10 +72,11 @@ age = st.number_input(
 # Prediction
 # -----------------------------------
 if st.button("Predict Insurance Choice"):
-   prediction = model.predict(pd.DataFrame([[age]], columns=["age"]))
+    prediction = model.predict(pd.DataFrame([[age]], columns=["age"]))
 
-    if prediction[0]==0:
-        result="No"
+    if prediction[0] == 0:
+        result = "No"
     else:
-        result="Yes"
+        result = "Yes"
+
     st.success(f"Insurance Purchase Prediction: {result}")
