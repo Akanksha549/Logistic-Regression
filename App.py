@@ -49,8 +49,8 @@ st.dataframe(df)
 # -----------------------------------
 # Train Model
 # -----------------------------------
-X = df.drop("age", axis=1)
-y = df["age"]
+X = df[["age"]]
+y = df["bought_insurance"]
 
 model = LogisticRegression()
 model.fit(X, y)
@@ -72,7 +72,7 @@ age = st.number_input(
 # Prediction
 # -----------------------------------
 if st.button("Predict Insurance Choice"):
-    prediction = model.predict([[age]])
+   prediction = model.predict(pd.DataFrame([[age]], columns=["age"]))
 
     if prediction[0]==0:
         result="No"
